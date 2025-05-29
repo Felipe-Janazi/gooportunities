@@ -1,4 +1,4 @@
-module github.com/Felipe-Janazi/gooportunities
+module github.com/Felipe-Janazi/gopportunities
 
 go 1.24.0
 
