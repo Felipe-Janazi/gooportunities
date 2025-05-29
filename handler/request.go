@@ -8,35 +8,34 @@ func errParamIsRequired(name, typ string) error {
 
 // CreateOpening
 type CreateOpeningRequest struct {
-	Role     string `json: "role"`
-	Company  string `json: "company"`
-	Location string `json: "location"`
-	// Tornando obrigatório a resposta do bool
-	Remote   *bool   `json: "remote"`
-	Link     string `json: "link"`
-	Salary   int64  `json: "salary"`
+	Role     string `json:"role"`
+	Company  string `json:"company"`
+	Location string `json:"location"`
+	Remote   *bool  `json:"remote"`
+	Link     string `json:"link"`
+	Salary   int64  `json:"salary"`
 }
 
 func (r *CreateOpeningRequest) Validate() error {
 
 	// malformed body
 	if r.Role == "" && r.Company == "" && r.Location == "" && r.Remote == nil && r.Salary <= 0 {
-		 return fmt.Errorf("request body is empty or malformed")
+		return fmt.Errorf("request body is empty or malformed")
 	}
 
-	if r.Role == ""{
+	if r.Role == "" {
 		return errParamIsRequired("role", "string")
 	}
 
-	if r.Company == ""{
+	if r.Company == "" {
 		return errParamIsRequired("company", "string")
 	}
 
-	if r.Location == ""{
+	if r.Location == "" {
 		return errParamIsRequired("location", "string")
 	}
 
-	if r.Link == ""{
+	if r.Link == "" {
 		return errParamIsRequired("link", "string")
 	}
 
@@ -50,19 +49,19 @@ func (r *CreateOpeningRequest) Validate() error {
 	}
 
 	return nil
-} 
+}
 
 // UpdateOpening
 type UpdateOpeningRequest struct {
-	Role     string `json: "role"`
-	Company  string `json: "company"`
-	Location string `json: "location"`
-	Remote   *bool   `json: "remote"`
-	Link     string `json: "link"`
-	Salary   int64  `json: "salary"`
+	Role     string `json:"role"`
+	Company  string `json:"company"`
+	Location string `json:"location"`
+	Remote   *bool  `json:"remote"`
+	Link     string `json:"link"`
+	Salary   int64  `json:"salary"`
 }
 
-func (r *UpdateOpeningRequest) Validate() error{
+func (r *UpdateOpeningRequest) Validate() error {
 	// If any field is provided, validation is truthy
 	if r.Role != "" || r.Company != "" || r.Location != "" || r.Remote != nil || r.Link != "" || r.Salary > 0 {
 		return nil
