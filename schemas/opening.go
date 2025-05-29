@@ -17,7 +17,7 @@ type Opening struct {
 }
 
 type OpeningResponse struct {
-	ID       uint      `json: "id"`
+	ID        uint      `json: "id"`
 	CreateAt  time.Time `json: "createAt"`
 	UpdatedAt time.Time `json: "updatedAt"`
 	DeletedAt time.Time `json: "deleteAt, omitempty"`
