@@ -6,16 +6,12 @@ import (
 
 func Initialize() {
 
-	// r agora representa o uso do gin
+	// Initialize router
 	r := gin.Default()
 
-	// Definindo uma rota
-	r.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
+	// Initialize routes
+	initializeRoutes(r)
 
-	// Rodando a api
-	r.Run(":8080") // Por padrão port 8080
+	// Run the server
+	r.Run(":8080") // Standart port:8080
 }
