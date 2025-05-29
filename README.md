@@ -1,4 +1,4 @@
-# Gooportunities API
+# Gopportunities API
 
 API REST desenvolvida em **Go (Golang)**, utilizando:
 
