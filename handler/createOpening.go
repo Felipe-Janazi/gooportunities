@@ -19,7 +19,6 @@ import (
 // @Failure 400 {object} ErrorResponse
 // @Falilure 500 {object} ErrorResponse
 // @Router /opening [post]
-
 func CreateOpeningHandler(ctx *gin.Context) {
 
 	request := CreateOpeningRequest{}

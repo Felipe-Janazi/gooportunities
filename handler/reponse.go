@@ -49,7 +49,7 @@ type ListOpeningsResponse struct {
 	Data    []schemas.OpeningResponse `json:"data"`
 }
 
-type UpdateOpeningsResponse struct {
+type UpdateOpeningResponse struct {
 	Message string                  `json:"message"`
 	Data    []schemas.OpeningResponse `json:"data"`
 }
